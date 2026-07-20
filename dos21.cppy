@@ -1,0 +1,56 @@
+#include "cpu.h"
+#include <iostream>
+
+using namespace std;
+
+static uint32_t Ptr(uint16_t seg, uint16_t off)
+{
+    return ((uint32_t)seg << 4) + off;
+}
+
+void DOS21()
+{
+    uint8_t ah = cpu.ax >> 8;
+
+    switch(ah)
+    {
+        // Print string
+        case 0x09:
+        {
+            uint32_t p = Ptr(cpu.ds, cpu.dx);
+
+            while(memory[p] != '$')
+            {
+                cout << (char)memory[p];
+                p++;
+            }
+
+            break;
+        }
+
+        // Print character
+        case 0x02:
+        {
+            char ch = cpu.dx & 0xFF;
+            cout << ch;
+            break;
+        }
+
+        // Exit program
+        case 0x4C:
+        {
+            cpu.running = false;
+            break;
+        }
+
+        default:
+        {
+            cout << "\nDOS AH="
+                 << hex
+                 << (int)ah
+                 << " not implemented\n";
+            cpu.running = false;
+            break;
+        }
+    }
+}

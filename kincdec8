@@ -1,0 +1,44 @@
+#include "modrm8.h"
+#include "instructions_incdec8.h"
+#include "cpu.h"
+#include "register8.h"
+void IncRM8(uint8_t modrm)
+{
+uint8_t mod = modrm >> 6;
+uint8_t rm  = modrm & 7;
+
+uint8_t value = ReadRM8(mod, rm);
+//    uint8_t value = ReadRM8(modrm >> 6, modrm & 7);
+
+    value++;
+
+    WriteRM8(modrm >> 6, modrm & 7, value);
+}
+void IncDec8()
+{
+    uint8_t modrm = Fetch8();
+
+    uint8_t operation = (modrm >> 3) & 7;
+    uint8_t reg = modrm & 7;
+
+    uint8_t value = GetReg8(reg);
+
+    if(operation == 0)      // INC
+    {
+        value++;
+    }
+    else if(operation == 1) // DEC
+    {
+        value--;
+    }
+
+    SetReg8(reg, value);
+}
+void DecRM8(uint8_t modrm)
+{
+//    uint8_t value = ReadRM8(modrm);
+
+    value--;
+
+    SetRM8(modrm, value);
+}

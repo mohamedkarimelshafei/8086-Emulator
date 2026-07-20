@@ -1,0 +1,8 @@
+DEL *.SBR
+DEL *.OBJ
+DEL *.MAP
+DEL *.LST
+DEL *.EXE
+DEL *.CRF
+DEL *.REF
+DEL *.IMG

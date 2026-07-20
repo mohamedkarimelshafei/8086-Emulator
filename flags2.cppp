@@ -1,0 +1,6 @@
+#include "cpu.h"
+
+void CLC()
+{
+    cpu.flags &= ~0x0001;   // clear CF bit
+}

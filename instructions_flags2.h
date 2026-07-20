@@ -1,0 +1,6 @@
+#ifndef INSTRUCTIONS_FLAGS2_H
+#define INSTRUCTIONS_FLAGS2_H
+
+void CLC();
+
+#endif

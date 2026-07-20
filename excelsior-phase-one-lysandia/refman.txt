@@ -1,0 +1,608 @@
+
+
+
+
+                                  EXCELSIOR
+                             Phase One: Lysandia
+
+
+
+
+
+
+
+
+
+
+
+
+                           Player Reference Manual
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               Castle Software
+
+
+
+
+
+
+
+
+
+
+
+
+
+Excelsior Phase One: Lysandia
+By Daniel Berke and Matthew Engle
+Reference Manual Edition 2.0
+(C) Copyright 1994 by Daniel Berke and Matthew Engle
+All Rights Reserved.
+
+
+CASTLE SOFTWARE PROVIDES THIS SOFTWARE "AS-IS" AND DISCLAIMS ALL WARRANTIES,
+WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, ANY IMPLIED WARRANTY
+OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.  NEITHER CASTLE
+SOFTWARE, DANIEL BERKE, MATTHEW ENGLE, NOR ANYONE ELSE WHO HAS BEEN INVOLVED
+IN THE CREATION, PRODUCTION, OR DELIVERY OF THIS SOFTWARE SHALL BE LIABLE FOR
+ANY DAMAGES RESULTING FROM THE USE OF THIS SOFTWARE, INCLUDING BUT NOT LIMITED
+TO, LOSS OF PROFIT, DATA OR USE OF THE SOFTWARE, OR SPECIAL, INCIDENTAL OR
+CONSEQUENTIAL DAMAGES OR OTHER SIMILAR CLAIMS.  THE PERSON USING THE SOFTWARE
+BEARS ALL THE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE.  SOME
+STATES DO NOT ALLOW THE EXCLUSION OF THE LIMIT OF LIABILITY FOR CONSEQUENTIAL
+OR INCIDENTAL DAMAGES, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU.
+
+
+                              TABLE OF CONTENTS
+
+Overview                                                         2
+Installing Excelsior
+     System Requirements                                         3
+     Installation Instructions                                   3
+     SoundBlaster Sound Support                                  3
+     Compatibility Notes for OS/2 Users                          3
+     Troubleshooting                                             4
+Game Startup                                                     5
+Character Creation                                               6
+Resuming Games                                                   8
+Playing Excelsior                                                9
+Commands
+     Movement                                                    10
+     Action Commands                                             10
+     Special Commands                                            13
+
+
+2
+
+                                OVERVIEW
+
+
+Excelsior is a role playing game (RPG) designed for one player.  It was
+designed in the tradition of many other RPGs that have been available for
+computers since the early eighties.  If you are familiar with RPGs, you may
+choose to skip ahead to the installation instructions.  For those who are not
+familiar with RPGs, the idea is simple.  An RPG places you in the role of a
+person in a fantasy land with a task to complete.  At the beginning of the
+game, you get to design your character by defining his or her physical and
+mental attributes.  Your character is then placed in the fantasy world - a
+world filled with monsters, magic, ordinary people, and all sorts of other
+wondrous things.  Your goal will be described to you at the outset of the
+game, and it is up to you to figure out how to achieve it.  You communicate
+with the people in the game, gather clues, and perform tasks which draw you
+closer and closer to your final goal.  In addition, as you progress, your
+character develops both physically and mentally.  In the end, if you have
+prepared well, you will achieve your ultimate goal and bring your quest to
+completion.
+
+
+3
+                           INSTALLING EXCELSIOR
+
+
+SYSTEM REQUIREMENTS
+Excelsior requires an IBM PC with the following minimum hardware:
+
+    1.    A hard drive with 4.5 megabytes of free space
+    2.    VGA graphics
+    3.    640k of RAM
+
+In addition, Excelsior supports the use of SoundBlaster sound cards.  
+
+
+INSTALLATION INSTRUCTIONS
+Excelsior is supplied in a self-extracting archive.  All that is necessary to
+run Excelsior is to create a directory on the hard drive (normally called EX),
+and decompress the files.  The easiest way to do this is as follows:
+
+    Step 1:   Create the EX directory on your hard drive.
+    Step 2:   Copy all the files from the source disk to the EX directory.
+    Step 3:   Switch to the EX directory on the hard drive.
+    Step 4:   Uncompress the files by typing EXLSIOR.
+
+When the process is finished, Excelsior will be set up completely and ready to
+play by typing EX.  If for some reason you have difficulty in setting up the
+game, please contact Castle Software for assistance.
+
+
+SOUNDBLASTER SOUND SUPPORT
+To enable SoundBlaster sound in Excelsior, you must use the CT-VOICE.DRV
+driver file which is supplied with the SoundBlaster card.  Excelsior needs
+access to this file, which can be done one of two ways.  The simplest option
+is to copy this file into the Excelsior game directory.  Your other option is
+to provide the path to this file through the use of the SOUND environment
+variable set in your AUTOEXEC.BAT file.  (Note that the default SOUND path is
+not to the directory in which CT-VOICE.DRV was placed by the Sound-Blaster
+installation software.)
+
+To configure Excelsior for use with a SoundBlaster, you need to set the
+address and IRQ which your card uses.  To do this, run Excelsior with the -sb
+option.  For example, if your card is at address 220h and on IRQ 5, type
+"EX -sb220,5"  to configure the game.  This only needs to be done once; the
+values are automatically set the next time you run the game.
+
+COMPATIBILITY NOTES FOR OS/2 USERS
+There are three issues which OS/2 users must be aware of when they run
+Excelsior in a virtual DOS session.
+
+        1.      Excelsior must be run in a full screen DOS window.
+        2.      The PC speaker sound effects may not function properly.  On
+                some systems, the entire machine may lock up, while on others,
+                the sound simply distorts.  As a result, we do not guarantee
+                that these sounds will work while running under OS/2.
+        3.      When using a SoundBlaster card if the sound effects sound
+                scratchy or completely garbled, exit the current DOS session
+                and open a new one.  If this does not work, end any other
+                programs running concurrently and open a new DOS session.
+
+4
+
+TROUBLESHOOTING
+Problems with running Excelsior generally are related to either sound or
+expanded memory (EMS) support.  
+
+If you are experiencing problems with SoundBlaster sound, first be certain
+that the CT-VOICE.DRV driver file is installed as discussed earlier and the
+address and IRQ are properly set.  In addition, verify that sound is enabled
+in the Game Setup menu (press Alt-G while playing).  OS/2 users who are
+having trouble with sound should refer to the above section on OS/2
+compatibility issues.
+
+If you have an expanded memory manager installed (such as EMM386, QEMM, etc.),
+Excelsior will detect and attempt to use up to 1.5 megabytes of expanded
+memory (EMS).  This memory used for various game data which would otherwise
+be read off of disk, such as SoundBlaster sound.  As a result, you should
+notice a significant increase in game speed when using EMS.  
+
+Unfortunately, as is often the case, various other programs which you may be
+running (such as disk compressors and other TSR programs) may also be
+attempting to use EMS.  Sometimes this can cause conflicts, which leads to
+unpredictable behavior.  If you experience any "lockups" or other bizarre
+problems while running Excelsior, we suggest that you disable EMS.  This can
+be done by using the -e option at the command line.  Run Excelsior by typing
+"EX -e" to disable EMS use.  If this does not solve the problem, please
+contact Castle Software so that we may diagnose the problem.
+  
+
+5
+
+                                GAME STARTUP
+
+
+To run Excelsior, type "EX" at the DOS prompt.  The title screen will be
+displayed.  Upon pressing a key, the main menu will appear.  At this point,
+you have four choices:
+
+              (C)     Continue your adventure
+              (S)     Start a new adventure
+              (D)     Display the credits
+              (Q)     Quit to DOS
+
+Pressing "C" will resume a game already in progress.  This is the option which
+you will be selecting once you have created a character.  See the section on
+Resuming Games for more details.
+
+Pressing "S" will allow you to create a character for use in the game.  Refer
+to the section on Character Creation for the details of this process.
+
+Pressing "D" will give a complete list of those who worked on Excelsior.
+
+Pressing "Q" will end the game and return you to the DOS prompt.
+
+
+
+6
+
+                            CHARACTER CREATION
+
+
+Excelsior provides you with a large number of options when creating a
+character.  As a result, the process must be done carefully in order to tailor
+your character to fit your wishes.  It is strongly suggested that you read
+through the Fixer's Handbook before beginning the creation.  (If possible,
+read it as you go through the process.)  Excelsior characters are complex and
+to optimize your abilities, you will want to understand the differences
+between all the choices you are presented.  This information can only be found
+in the Fixer's Handbook, as much of it takes place "behind the scenes" and
+does not have a noticeable on-screen effect during character creation.
+
+To start working on your character, press "S" at the main menu.  This will
+bring up a blank character screen.  The initial values for your primary and
+secondary attributes are shown.  These will change as you develop your
+character.
+
+The first step is to give your character a name.  Enter a name less than
+fifteen letters long at the prompt.  When done, press Enter.
+
+The next step is to assign a race to your character.  The different races are
+discussed in the Fixer's Handbook.  Use the arrow keys to highlight the race
+of your choice.  Press Enter when that race is highlighted to select it.
+After selecting your race, take note of your attribute values.  Some races
+have implicit bonuses and penalties as part of their nature.  These
+adjustments should be apparent to you from reading the Fixer's Handbook.
+
+Next, you must select a gender.  This is generally male or female, but a few
+races offer the option of sexless.  As with race, your gender may affect
+different attributes.
+
+The next step in creating your character is to adjust your primary attributes.
+This is where you can tailor your character to your liking, from mindless
+brute to frail wizard, or anything in between.  These three attributes affect
+different abilities your character will have during the game, and ultimately
+will be used to determine which class your character qualifies for.  Again, a
+complete discussion of how the primary (and secondary) attributes affect you
+is detailed in the Fixer's Handbook.
+
+Before you begin adjusting your attributes, take note of their current values.
+These are the lowest values to which they may be set.  For example, if your
+dexterity is 13, you can increase and decrease it at will, but you can not
+decrease it below 13.  This holds for all attributes.  In addition, the
+maximum for any one primary attribute is 50.
+
+You are given 30 points to divide up among your primary attributes.  On the
+right side of the screen you will see a window with options to increment and
+decrement each of the three attributes.  Select an action and press Enter to
+perform it.  You can add and subtract points at will, there is no set order.
+
+7
+
+Feel free to experiment.  When you are confident with your distribution, press
+Escape.  This will end the selection process.  Be sure to use all 30 points;
+there is no reason not to.  You can not "save" some for use later.  If you
+only use 28 of the 30 points, the two you don't use will be lost for good.
+
+The secondary attributes are similarly adjusted.  However, you are only given
+five points to distribute.  This is because the maximum value in any one of
+the secondary attributes is ten.  Distribute all five points in a similar
+fashion as you did for the primary attributes, and press Escape when you are
+finished.
+
+The next step in creating your character is to select a class.  There are
+thirteen classes from which you may be allowed to select.  However, most
+classes have certain minimum requirements in order for you to qualify.  These
+are hinted at in the Fixer's Handbook.  Most of these limitations are based on
+common sense: if you have a strength of 15, don't plan on being a warrior.
+Only the classes you qualify for (based on your six attributes) are displayed.
+Make your selection by highlighting your choice and pressing Enter.
+
+The next step is to select skills for your character.  There are twelve
+possible skills, and you may choose two skills to start with.  This may not
+seem fair, but note that during the course of your adventure, you will have
+the opportunity to learn all of the remaining skills.
+
+It is likely that your character will initially start with one skill already
+learned.  This is because certain skills are implied by being a certain class.
+For example, a mage by definition is a magic user.  Therefore, the magic skill
+is already learned.  After you have chosen your two skills, press Escape.
+
+The final step in creating your character is to adjust your alignment.  The
+ramifications of this are discussed in the Fixer's Handbook.  Please note that
+certain classes have alignment limits.  For example, you can not have a purely
+good assassin.  These limits are discussed in the Handbook.  If you attempt to
+set your alignment to an disallowed value, you will be told so and asked to
+readjust it.
+
+To adjust your alignment, a scale will appear on the screen.  The left end
+represents evil (red) and the right end represents good (green).  The initial
+setting is in the middle, or neutral (white).  Use the arrow keys to shift the
+scale to the desired alignment and press Enter to select it.
+
+Finally, the game will ask you if you are satisfied with your character.  If
+you are happy with your character, type "Y".  Answering "N" will discard your
+character and return you to the main menu.
+
+Once you have created your character, the introductory text will be displayed.
+After you have read it, the game will begin.  Your character will be given a
+small initial amount of gold and food.  At this point, you should seek out the
+nearest town and equip yourself for your adventure.  After that, you're on
+your own.  Good luck!
+
+
+8
+
+                               RESUMING GAMES
+
+
+When you press "C" at the main menu, you will be presented with a list of
+games you have saved.  Enter the number of the game which you wish to restore.
+The game will be loaded and your current status will be exactly as it had been
+when you saved it.  You can now continue playing from the point at which you
+had previously left off.
+
+
+9
+
+                             PLAYING EXCELSIOR
+
+
+The game screen in Excelsior is divided into three windows.  The large window
+in the upper left portion of the screen is the map window.  This is where the
+terrain map is displayed, as well as the detailed player status screen and any
+long passages of text.
+
+To the right of the game window is the status window.  During the normal
+course of the game, this window displays your vital statistics such as hit
+points, magic points, food, gold, readied weapon(s), and worn armor.  
+
+Hit points and magic points are displayed as a fraction.  The first number
+represents your current value, while the second number represents the maximum
+value attainable.  Under normal conditions, these values are displayed in
+white.  If the current value of your hit points or magic points is less than
+20% of its respective maximum, the value is displayed in yellow.  If the
+current value is less than 10% of its maximum, it is displayed in red.
+Furthermore, if your character is diseased, the hit point value blinks in
+green.
+
+If you are carrying less than 100 units of food, the food value is displayed
+in red.  If your food reaches zero, the value begins blinking, denoting that
+you are starving.  
+
+In the middle of the status window is a list of readied weapons.  Your current
+weapons are always displayed.  If you are using a missile weapon, the number
+of arrows or quarrels you have is also displayed.
+
+Below the weapon list is a list of all armor currently worn.  Below this is
+your armor class, which is a gauge of how well protected you are.  A zero
+represents no protection, while higher numbers denote higher levels of
+protection.  Your armor class can also be affected by spells and potions for
+short periods of time.
+
+Often when speaking to other people in the game you will be asked to make a
+decision.  This could be a simple yes or no, or a choice from a merchant's
+inventory list.  When this happens, a highlighted bar will appear over the top
+choice.  Using the arrow keys, position the bar over your selection and press
+Enter.  In all situations, pressing Escape will answer the question in the
+negative (or select nothing from a list).
+
+The window at the bottom of the screen is the command window.  This window
+displays the results of each command you execute.  For things simple as
+movement, it merely displays the direction in which you are moving.  However,
+in cases such as talking to other people, most dialogue which takes place is
+displayed here.  Any time the text takes up more than one screen, an arrow
+will appear signifying that there is more text and the game is awaiting a
+keypress.
+
+On some occasions you will be asked to answer a question or provide a password
+to someone.  This too is done in the command window.  When this situation
+arises, simply type in your response and press Enter.
+
+10
+
+                                  COMMANDS
+
+There are many commands in Excelsior, each one representing a particular
+action which you can perform.  Before introducing the command set, a few words
+should be said about the concept of directional specification.
+
+For many commands, in addition to specifying the command itself, a direction
+also needs to be specified.  For example, when attacking, in addition to
+invoking the attack command, it is necessary to specify the direction in which
+you wish to attack.  Commands that require a direction prompt you with a
+red question mark ("?") in the command window.  To specify a direction, press
+any of the valid direction keys.  Pressing Escape will abort the command.
+
+
+MOVEMENT
+Moving around the land of Excelsior is simple.  The screen is laid out in
+typical map style with north at the top of the screen.  To move around, the
+mouse or keyboard is used.  If you are using the mouse, simply hold down the
+left button with the cursor positioned in the general direction in which you
+wish to travel.  If you are more comfortable using the keyboard, you can use
+either the cluster of arrow keys or the numeric keypad (be sure NUM LOCK is
+off).  The advantage to using the keypad is that it allows you to move along
+the off-cardinal directions (northwest, northeast, southwest, southeast).  In
+addition to movement, these same keys are used to specify directions for
+commands which require a directional specification.
+
+
+ACTION COMMANDS
+The following is a complete list of the keys used in the game to perform the
+different available actions.  Note that almost all keys are abbreviations for
+the command, which makes the command set very simple to remember.
+
+A - Attack
+Attack allows you to strike at another person or monster.  Upon invoking the
+attack command, you will first be told which weapon you are attacking with and
+then you will be prompted for a direction.  In cases where you have two
+weapons readied, you will need to specify two directions, one for each weapon.
+
+B - Board or exit a ship or horse
+Board allows you to get on or off of a ship or to mount or dismount a horse.
+There are certain restrictions to this command.  For example, you can't board
+a ship while on horseback.
+
+C - Cast a spell
+The cast command is used to invoke spells.  When you type the cast command,
+you will be prompted for the spell name.  Each spell has a two-letter ab-
+breviation which you must type at this time.  If the spell name is invalid (or
+you press Escape), the command will be aborted.  If you enter a valid spell
+name, one of two things will happen.  If the spell requires a direction (as is
+the case for most offensive spells), you will be prompted for a direction,
+just like in the attack command.  If the spell does not need any further
+information besides the name, it will be cast.  See the Fixer's Handbook for
+more information about the various spells in the game.
+
+11
+
+D - Drop an item
+The drop command is used to discard an item in your backpack.  When you invoke
+the drop command, a list of the items you presently have in your backpack is
+displayed in the status window.  Select the item to drop, and then specify a
+direction in which to drop it.  Note that weapons and armor must be removed
+before they can be dropped.
+
+E - Enter structure or use ladder
+The enter command allows you to enter a building or dungeon.  To perform this,
+you must be standing on the structure which you want to enter.  In a dungeon
+or keep, if you are standing on a ladder, the enter command causes you to
+climb either up or down.
+
+F - Fire a ship's catapult
+Every ship is equipped with a catapult used for defense.  If you are on board
+a ship, this command will initiate an attack using this catapult.  You may
+still use your normal weapons to attack by using the attack command.
+
+G - Get an item
+The get command is the opposite of the drop command.  It allows you to pick up
+an object and add it to your backpack (assuming you have room).  To get an
+item, invoke the command while standing next to the item and specify the
+direction in which the item is located.  Note that since each "tile" can hold
+two items, if there are two items in the specified direction, you must specify
+which one.  This is done by pressing the right arrow to pick up the object on
+the right side of the tile, and the left arrow to pick up the object on the
+left.  If there is only one object in the tile, this step is not necessary.
+
+H - Help
+This item brings up a screen which lists all of the game commands for easy
+reference.
+
+I - Inspect your surroundings
+The inspect command is used to more thoroughly search an object for any
+special characteristics.  For example, you could inspect a wall looking for a
+secret door.  Inspect also allows you to read signs.  Inspect requires a
+direction.
+
+K - Close a door
+The close command simply closes the door in the direction you specify.
+
+L - Look around
+The look command is used to identify terrain and/or objects.  It merely tells
+you what you see on the surface; no in depth searching is performed.  For
+example, if you look at a wall, look will respond with "You see a wall", while
+to search the wall for a possible secret door, you must use inspect.  Look
+requires a direction.
+
+12
+
+O - Open a door
+Open allows you to open a door in the specified direction.  This command will
+fail if the door is locked or already open.
+
+P - Pick a lock
+Use the pick lock command to attempt (by less than legitimate means) to unlock
+a locked door.  To do this requires a skeleton key, which is lost after use.
+Your success at picking locks depends on your dexterity, among other things.
+The pick command requires a direction.
+
+R - Ready a weapon
+The ready weapon command allows you to select your weapon(s).  The ready
+weapon command will list all the weapons in your backpack which you can use.
+This takes into account any limitations imposed by the weapons (such as a
+minimum strength requirement).  If your current readied weapon must be un-
+readied before using the new one (for example, unreadying a two-handed
+weapon), it is done automatically.  By selecting "None", you unready all
+readied weapons.
+
+S - Swim
+The swim command is used for crossing short distances of water.  Needless to
+say, you must know how to swim to use this command.  Swim needs to be told the
+direction in which you wish to swim.  Note that you can swim as long as you
+want, but after a certain amount of time without resting on land, you begin to
+drown.
+
+T - Talk to someone
+The talk command allows you to communicate with the person in the specified
+direction.  You are able to speak with people who are not only adjacent to
+you, but also one tile away (such as the case when you must speak over a
+counter to a merchant).  The variety of interactions you can have depends on
+the person you are speaking with.  In the case of a merchant, his or her
+inventory list will appear in the status window for you to select from.  Any
+item which you cannot use (such as a weapon you are too weak to wield) will
+appear in red.
+
+U - Use an item
+The use command lets you use an item in your backpack.  This is used with
+things such as torches, shovels, potions, etc.  Some objects will require a
+direction (such as digging with a shovel).  
+
+W - Wear armor
+The wear armor command is similar to the ready weapon command.  It displays a
+list of items which you may wear, taking into account any requirements
+(strength, etc.) imposed by the item.  You may also remove currently worn
+armor with this command.
+
+13
+
+SPECIAL COMMANDS
+There are several special commands which deal with more functional aspects of
+the game:
+
+Space - Pass time
+Pressing the space bar causes one turn to pass.  Since time does not elapse in
+the game until you make a move, this is useful if you want to wait for some-
+thing to happen.
+
+F1 - Player status
+Pressing the F1 key brings up the player status screens.  These screens
+display your character's attributes and skills, the contents of your backpack
+(items you can't use are named in red), in addition to any "special" items you
+have, and spells in your spellbook.  Spells currently active are highlighted
+in yellow.
+
+Alt-G - Game controls
+The game control menu allows you to set various game parameters such as the
+display time between messages which appear in the command window, sound
+effects (on or off), mouse control (on or off), and the frequency of auto-
+saves.
+
+Alt-S - Save game
+This command allows you to save your game.  The game will prompt you for a
+game number from zero to nine, or press Escape to abort the process.  You may
+enter a short description of the save position for reference.  You can then
+restore the game using the Alt-R (restore) command.
+
+Alt-R - Restore game
+The restore command allows you to load previously saved games.  This is done
+by typing in the number of the game you wish to restore, or by pressing Escape
+to abort the process.  If the restore is successful, the new game is loaded
+and you continue from where you left off.
+
+Alt-X - Exit to DOS
+This command exits you to DOS.  If you want to continue playing later from
+your current position, you must save your game previous to quitting, since it
+is not done automatically.
+
+

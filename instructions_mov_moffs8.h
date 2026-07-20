@@ -1,0 +1,5 @@
+#ifndef INSTRUCTIONS_MOV_MOFFS8_H
+#define INSTRUCTIONS_MOV_MOFFS8_H
+
+void MOV_AL_MEM8();
+#endif

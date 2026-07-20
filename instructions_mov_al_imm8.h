@@ -1,0 +1,6 @@
+#ifndef INSTRUCTIONS_MOV_AL_IMM8_H
+#define INSTRUCTIONS_MOV_AL_IMM8_H
+
+void MovALImm8();
+
+#endif

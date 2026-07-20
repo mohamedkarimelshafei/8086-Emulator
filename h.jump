@@ -1,0 +1,17 @@
+#ifndef INSTRUCTIONS_JUMP_H
+#define INSTRUCTIONS_JUMP_H
+
+#include "cpu.h"
+
+void JmpShort();
+void JmpNear();
+
+void CallNear();
+void RetNear();
+
+void Je();
+void Jne();
+void Jc();
+void Jnc();
+
+#endif

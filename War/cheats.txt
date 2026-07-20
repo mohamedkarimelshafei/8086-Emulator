@@ -1,0 +1,24 @@
+These are the cheats for Warcraft v1.0
+First press [enter], then type the message, then press [enter] again.
+
+MESSAGES-
+Sally - uncovers all the area, no need to explore!
+Pot of gold - gives you 10000 pieces of gold and 7000 lumber. Do it as
+              much as you want!
+Hurry up guys - lets you make buildings faster and to train your people.
+                Very useful!
+Iron forge - upgrades all your weapons!
+Eye of newt - upgrades all your magics. Only
+              use it when you have people who can use magic.
+Humanwin - This enables the following -human1 (end of 1st level)
+                                         "  2 ( "   " 2nd   "  )
+                                         etc.
+Orcwin - Same as above, but replace "human" with "orc"
+Corwin of amber- enables the following cheat -
+There - makes your men invunerable, hitting with 260 points of damage with 
+        every hit they make. They can only be killed by a direct catapult
+        hit.
+Yours truly - Skips a level.
+Crushing Defeat - lose a level.
+
+The controls are practically the same as Dune 2.

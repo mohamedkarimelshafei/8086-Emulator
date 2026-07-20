@@ -1,0 +1,25 @@
+#include "bios.h"
+#include "cpu.h"
+#include <iostream>
+
+using namespace std;
+
+void BIOSInterrupt(unsigned char number)
+{
+    switch(number)
+    {
+        case 0x10:
+            cout << "BIOS Video Interrupt" << endl;
+            break;
+
+        case 0x16:
+            cout << "BIOS Keyboard Interrupt" << endl;
+            break;
+
+        default:
+            cout << "Unknown BIOS INT "
+                 << hex
+                 << (int)number
+                 << endl;
+    }
+}
